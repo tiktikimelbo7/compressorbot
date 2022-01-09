@@ -12,22 +12,7 @@
 #
 #    License can be found in < https://github.com/1Danish-00/CompressorBot/blob/main/License> .
 
-
-import os
 from . import *
-from dotenv import load_dotenv
-
-CONFIG_FILE_URL = os.environ.get('CONFIG_FILE_URL', None)
-if CONFIG_FILE_URL is not None:
-    res = requests.get(CONFIG_FILE_URL)
-    if res.status_code == 200:
-        with open('config.env', 'wb+') as f:
-            f.write(res.content)
-            f.close()
-    else:
-        logging.error(res.status_code)
-
-load_dotenv('config.env')
 
 try:
     APP_ID = config("APP_ID", cast=int)
