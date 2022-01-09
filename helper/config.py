@@ -13,6 +13,7 @@
 #    License can be found in < https://github.com/1Danish-00/CompressorBot/blob/main/License> .
 
 from . import *
+from dotenv import load_dotenv
 
 CONFIG_FILE_URL = os.environ.get('CONFIG_FILE_URL', None)
 if CONFIG_FILE_URL is not None:
