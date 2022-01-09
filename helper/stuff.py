@@ -15,6 +15,7 @@
 from .worker import *
 from .bot_commands import *
 import asyncio
+from bot import bot, dispatcher
 
 async def up(event):
     if not event.is_private:
