@@ -13,7 +13,8 @@
 #    License can be found in < https://github.com/1Danish-00/CompressorBot/blob/main/License> .
 
 from .worker import *
-
+from .bot_commands import *
+import asyncio
 
 async def up(event):
     if not event.is_private:
@@ -127,3 +128,23 @@ async def ccom(e):
         hehe = f"{outt};{dl};{tb};{dtime}"
         key = code(hehe)
         await customenc(omk, key)
+
+
+
+botcmds = [
+        (f'{BotCommands.StartCommand}','Initialization Of The Bot'),
+        (f'{BotCommands.PingCommand}','Get Pinged by Repository'),
+        (f'{BotCommands.HelpCommand}','Get Detailed Help'),
+]
+
+bot.set_my_commands(botcmds)
+
+
+start_handler = CommandHandler(BotCommands.StartCommand, start, run_async=True)
+ping_handler = CommandHandler(BotCommands.PingCommand, ping, run_async=True)
+help_handler = CommandHandler(BotCommands.HelpCommand,help, run_async=True)
+
+dispatcher.add_handler(start_handler)
+dispatcher.add_handler(help_handler)
+dispatcher.add_handler(ping_handler)
+
