@@ -143,7 +143,7 @@ bot.set_my_commands(botcmds)
 
 
 start_handler = CommandHandler(BotCommands.StartCommand, start, run_async=True)
-ping_handler = CommandHandler(BotCommands.PingCommand, ping, run_async=True)
+up_handler = CommandHandler(BotCommands.PingCommand, up, run_async=True)
 help_handler = CommandHandler(BotCommands.HelpCommand,help, run_async=True)
 
 dispatcher.add_handler(start_handler)
