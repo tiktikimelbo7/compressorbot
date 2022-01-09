@@ -16,6 +16,7 @@ from .worker import *
 from .bot_commands import *
 import asyncio
 from .bot import bot, dispatcher
+from telegram.ext import CommandHandler
 
 async def up(event):
     if not event.is_private:
